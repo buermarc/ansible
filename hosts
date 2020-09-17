@@ -1,0 +1,33 @@
+---
+all:
+    children:
+        freebsd:
+            hosts:
+                freebsd-server:
+                    mac: ["00:25:90:a4:43:2f", "00:25:90:a4:43:2e"]
+        Artix:
+            hosts:
+                node0:
+                    mac: ["bc:5f:f4:6a:bd:4b"]
+        Void:
+            hosts:
+                node1:
+                    mac: ["bc:5f:f4:62:9f:5f"]
+        NixOS:
+            hosts:
+                node2:
+                    mac: ["bc:5f:f4:0f:62:1b"]
+        SuseLeap:
+            hosts:
+                node3:
+                    mac: ["10:7b:44:1a:93:33"]
+        nodes:
+            hosts:
+                freebsd-server:
+                node0:
+                node1:
+                node2:
+                node3:
+            vars:
+                ansible_ssh_private_key_file: /home/mulc/.ssh/id_ansible_rsa
+                ansible_user: ansible
