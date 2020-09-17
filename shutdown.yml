@@ -1,0 +1,10 @@
+---
+- name: Shutdown the host
+  hosts: all
+
+  tasks:
+    - name: shutdown
+      command: poweroff
+      become: yes
+      become_method: sudo
+      ignore_errors: 'yes'

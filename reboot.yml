@@ -1,0 +1,13 @@
+---
+- name: Reboot the host
+  hosts: all
+
+  tasks:
+    - name: reboot
+      become: yes
+      become_method: sudo
+      reboot:
+        search_paths: ["/sbin",
+                       "/usr/sbin",
+                       "/usr/local/sbin",
+                       "/run/current-system/sw/bin"] # Path for NixOS
